@@ -1,25 +1,40 @@
-import Link from "next/link";
+"use client";
 
-export default function MainNav() {
+import { NavItem } from "@/types";
+import Link from "next/link";
+import { ReactNode, useState } from "react";
+import MobileNav from "./mobile-nav";
+
+interface MainNavProps {
+  items?: NavItem[];
+  children?: ReactNode;
+}
+
+export default function MainNav({ items }: MainNavProps) {
+  const [showMobileMenu, setShowMobileMenu] = useState<boolean>(true);
   return (
     <div className="flex items-center md:gap-10">
       <Link href={"/"} className="hidden md:flex items-center space-x-2">
         <span className="font-bold hidden sm:inline-block">Post Writer</span>
       </Link>
       <nav className="md:flex gap-6 hidden">
-        <Link
-          href={"/blog"}
-          className="text-lg sm:text-sm font-medium hover:text-foreground/80"
-        >
-          ブログ
-        </Link>
-        <Link
-          href={"#feature"}
-          className="text-lg sm:text-sm font-medium hover:text-foreground/80"
-        >
-          特徴
-        </Link>
+        {items?.map((item, index) => (
+          <Link
+            key={index}
+            href={item.href}
+            className="text-lg sm:text-sm font-medium hover:text-foreground/80"
+          >
+            {item.title}
+          </Link>
+        ))}
       </nav>
+      <button
+        className="md:hidden"
+        onClick={() => setShowMobileMenu(!showMobileMenu)}
+      >
+        <span>メニュー</span>
+      </button>
+      {showMobileMenu && <MobileNav />}
     </div>
   );
 }
