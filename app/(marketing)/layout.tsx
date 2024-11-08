@@ -10,9 +10,9 @@ export default function MarketingLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div>
+    <div className="flex min-h-screen flex-col">
       <header className="container z-40 bg-background">
-        <div className="h-20 py-6 flex items-center justify-between">
+        <div className="flex h-20 py-6 items-center justify-between">
           <MainNav items={marketingConfig.mainNav} />
           <nav>
             <Link
