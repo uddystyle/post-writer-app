@@ -1,4 +1,5 @@
 import MainNav from "@/components/main-nav";
+import SiteFooter from "@/components/site-footer";
 import { buttonVariants } from "@/components/ui/button";
 import { marketingConfig } from "@/config/marketing";
 import { cn } from "@/lib/utils";
@@ -10,7 +11,7 @@ export default function MarketingLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div>
       <header className="container z-40 bg-background">
         <div className="flex h-20 py-6 items-center justify-between">
           <MainNav items={marketingConfig.mainNav} />
@@ -28,6 +29,7 @@ export default function MarketingLayout({
         </div>
       </header>
       <main>{children}</main>
+      <SiteFooter />
     </div>
   );
 }
