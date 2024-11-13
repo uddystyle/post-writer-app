@@ -23,7 +23,7 @@ export async function generateMetadata({
   const page = await getPostFromSlug(params.slug);
 
   if (!page) {
-    notFound();
+    return {};
   }
   return {
     title: page.title,

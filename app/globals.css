@@ -4,7 +4,6 @@
 
 @layer base {
   :root {
-
     --background: 0 0% 100%;
 
     --foreground: 222.2 84% 4.9%;
@@ -53,10 +52,9 @@
 
     --chart-5: 27 87% 67%;
 
-    --radius: 0.5rem
+    --radius: 0.5rem;
   }
   .dark {
-
     --background: 222.2 84% 4.9%;
 
     --foreground: 210 40% 98%;
@@ -103,7 +101,7 @@
 
     --chart-4: 280 65% 60%;
 
-    --chart-5: 340 75% 55%
+    --chart-5: 340 75% 55%;
   }
 }
 
@@ -114,4 +112,23 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+h1.ce-header {
+  @apply text-3xl font-bold;
+}
+h2.ce-header {
+  @apply text-2xl font-semibold;
+}
+h3.ce-header {
+  @apply text-xl font-semibold;
+}
+h4.ce-header {
+  @apply text-lg font-semibold;
+}
+h5.ce-header {
+  @apply text-base font-semibold;
+}
+h6.ce-header {
+  @apply text-base font-semibold;
 }

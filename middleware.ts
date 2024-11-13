@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-import type { NextRequest } from "next/server";
 import { withAuth } from "next-auth/middleware";
 import { getToken } from "next-auth/jwt";
 
@@ -15,8 +14,8 @@ export default withAuth(
       if (isAuth) {
         return NextResponse.redirect(new URL("/dashboard", req.url));
       }
+      return null;
     }
-    return null;
 
     if (!isAuth) {
       return NextResponse.redirect(new URL("/login", req.url));
@@ -24,7 +23,7 @@ export default withAuth(
   },
   {
     callbacks: {
-      async authorized() {
+      async authorized({ req, token }) {
         return true;
       },
     },

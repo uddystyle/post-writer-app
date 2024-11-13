@@ -62,7 +62,7 @@ export default function UserAuthForm() {
             signIn("google");
           }}
         >
-          {isGithubLoading ? (
+          {isGoogleLoading ? (
             <Icon.spinner className="animate-spin" />
           ) : (
             <Icon.google />
