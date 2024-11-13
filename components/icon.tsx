@@ -1,7 +1,6 @@
 import {
   AlertTriangle,
   ArrowRight,
-  Check,
   ChevronLeft,
   ChevronRight,
   Command,
@@ -12,7 +11,6 @@ import {
   Image,
   Laptop,
   Loader2,
-  LucideProps,
   Moon,
   MoreVertical,
   Pizza,
@@ -20,7 +18,6 @@ import {
   Settings,
   SunMedium,
   Trash,
-  Twitter,
   User,
   X,
 } from "lucide-react";

@@ -1,5 +1,3 @@
-import DashboardShell from "./dashboard-shell";
-
 interface DashboardHeaderProps {
   heading: string;
   text?: string;

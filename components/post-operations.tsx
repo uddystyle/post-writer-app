@@ -1,6 +1,5 @@
 "use client";
 
-import { Post } from "@/.contentlayer/generated";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,6 +9,7 @@ import {
 } from "./ui/dropdown-menu";
 import { Icon } from "./icon";
 import Link from "next/link";
+import { Post } from "@prisma/client";
 
 import {
   AlertDialog,
@@ -20,7 +20,6 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-  AlertDialogTrigger,
 } from "./ui/alert-dialog";
 import { useState } from "react";
 import { toast } from "@/hooks/use-toast";
@@ -37,7 +36,7 @@ async function deletePost(postId: string) {
     }
 
     return true;
-  } catch (err) {
+  } catch (error) {
     toast({
       title: "記事の削除に失敗しました",
       description: "もう一度試してください",
